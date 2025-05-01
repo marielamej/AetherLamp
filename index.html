@@ -3,49 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether Lamp</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Aether | Natural Light Technology</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">Aether Lamp</a>
+    <nav id="navbar">
+        <a href="#" class="logo">Aether</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="mariela.html">Mariela</a></li>
-            <li><a href="kaya.html">Kaya</a></li>
-        </ul>
     </nav>
-
-    <!-- Homepage Section -->
-    <section class="hero">
-        <h1>Welcome to the Aether Lamp</h1>
-        <p>Enhancing your environment with natural light. A product designed to improve your circadian rhythm.</p>
+    
+    <header>
+        <div class="gradient-bg" id="gradient-bg"></div>
+        <div class="overlay">
+            <h1>Aether</h1>
+            <p>A transparent lamp that mimics the natural cycle of the sun throughout the day, bringing harmony to your space and rhythm to your life.</p>
+            <div>
+                <a href="#about" class="btn">Learn More</a>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Aether</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Aether is a lighting solution designed to bring the natural rhythm of the sun indoors. Transitioning seamlessly through six distinct light modes—dawn, day, afternoon, sunset, evening, and night—Aether mirrors the evolving light of the sky to support your natural circadian rhythm.</p>
+                    <p>Where conventional lighting remains static, Aether responds to the time of day, creating a dynamic atmosphere that elevates mood, boosts focus, and helps you unwind when it matters most.</p>
+                    <p>Named after the Greek word for “pure, fresh air” and “clear sky,” Aether is where nature, design, and technology converge. Crafted from slip-cast ceramic porcelain and inspired by the sun’s daily arc, it brings both aesthetic elegance and thoughtful functionality to your space—perfect for those who spend long hours at a desk but crave the calming influence of natural light.</p>
+                </div>
+                <div class="about-image">
+                    <img src="AetherLamp.jpg" alt="Aether Lamp" class="lamp-image">
+                </div>
+            </div>
+        </div>
     </section>
-
-    <!-- Product Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <h2>Natural Light Simulation</h2>
-            <p>The Aether Lamp mimics the natural outdoor lighting to keep your circadian rhythm in sync.</p>
-        </div>
-        <div class="feature-card">
-            <h2>Customizable Settings</h2>
-            <p>Adjust the light settings based on the time of day, making it perfect for your environment.</p>
-        </div>
-        <div class="feature-card">
-            <h2>Sleek and Modern Design</h2>
-            <p>The minimalist design integrates seamlessly into any space.</p>
+    
+    <section class="section features" id="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Current Problem</h3>
+                    <p>We spend around 90% of our day indoors, and much of our exposure to artificial light is from the harsh overhead lighting we use to light up these spaces. By its nature, artificial lighting also exposes us to light at times of day when we normally would not receive light from the sun.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌅</div>
+                    <h3 class="feature-title">Why Lighting Matters</h3>
+                    <p>Artificial lighting disrupts sleep, increases stress, and harms mood. It also causes eye strain, headaches, fatigue, and reduced focus.
+                    Natural lighting on the other hand helps regulate sleep, boosts mood, improves focus and productivity and promotes emotional well-being and connection to nature.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⏱️</div>
+                    <h3 class="feature-title">Automatic Scheduling</h3>
+                    <p>Aether automatically adjusts to your time zone and changes colors according to the natural sunlight pattern.</p>
+                </div>
+                <!--<div class="feature-item">
+                    <div class="feature-icon">💤</div>
+                    <h3 class="feature-title">Better Sleep</h3>
+                    <p>By mimicking natural light patterns, SunCycle helps regulate your circadian rhythm for improved sleep quality.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Customizable Modes</h3>
+                    <p>Adjust brightness levels and transition times to suit your personal preferences and schedule.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔋</div>
+                    <h3 class="feature-title">Energy Efficient</h3>
+                    <p>Uses low-energy LED technology for sustainable lighting that's gentle on your energy bill.</p>
+                </div> -->
+            </div>
         </div>
     </section>
-
-    <!-- Footer -->
+    
+    <section class="section team" id="team">
+        <div class="container">
+            <h2 class="section-title">Meet the Team</h2>
+            <p>The brilliant minds behind Aether. Click on team members to learn about their process.</p>
+            <div class="team-grid">
+                <div class="team-member" onclick="openModal('member1')">
+                    <div class="member-img">
+                        <img src="Mariela.jpg" alt="Team Member 1" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Mariela Mejia-Guzman</h3>
+                        <p class="member-role">Technology & Programming</p>
+                        <p>Click to see Mariela's process</p>
+                    </div>
+                </div>
+                <div class="team-member" onclick="openModal('member2')">
+                    <div class="member-img">
+                        <img src="Kaya.jpg" alt="Team Member 2" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Kaya Hamon</h3>
+                        <p class="member-role">Design Lead</p>
+                        <p>Click to see Kaya's process</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p>Interested in learning more about Aether? Reach out to us!</p>
+                <p style="margin: 20px 0;">mariela.mejiatg@gmail.com<p> kayathamon@gmail.com</p>
+                <!--<p>Follow our journey on social media!</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#">📱</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    
     <footer>
-        <p>&copy; 2025 Aether Lamp. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">Aether</div>
+            <p>Bringing natural light indoors</p>
+            <p>&copy; 2025 Aether. All rights reserved.</p>
+        </div>
     </footer>
-
+    
+    <!-- Team Member Modals -->
+    <div class="modal" id="member1-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('member1')">×</span>
+            <h2>Mariela Mejia-Guzman's Process</h2>
+            <p>Technology & Programming Lead</p>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Ideation Phase</span>
+                        <h3>Concept Development</h3>
+                        <p>My journey with SunCycle began with research into how light affects human well-being. I was fascinated by studies showing how artificial lighting disrupts our natural rhythms, and started sketching ideas for a lamp that could mimic the sun's natural progression.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Design Phase</span>
+                        <h3>Material Exploration</h3>
+                        <p>Finding the perfect transparent material that would diffuse light beautifully while maintaining structural integrity was challenging. After testing multiple options, I settled on a specialized polycarbonate with optical properties that enhanced the light transitions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Prototyping</span>
+                        <h3>Form Finding</h3>
+                        <p>The lamp's form went through numerous iterations. I wanted to create something that looked beautiful both when illuminated and when off. The final curved design allows light to refract through the material in fascinating ways throughout the day.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Final Development</span>
+                        <h3>Engineering Solutions</h3>
+                        <p>Integrating the lighting technology with the physical form required creative engineering solutions. I worked closely with Jordan to develop a system that allowed for smooth transitions between light states while maintaining the lamp's aesthetic integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="member2-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('member2')">×</span>
+            <h2>Kaya Hamon's Process</h2>
+            <p>Design Lead</p>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Planning Phase</span>
+                        <h3>Initial Setup</h3>
+                        <p>I began with a planning meeting with my mentor, John Domenico, where we established the project scope and vision. I created a semester timeline with key milestones, determined what materials I’d need, and developed a strategy for slip casting using push pins.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Form Development</span>
+                        <h3>Sketching & Prototyping</h3>
+                        <p>I sketched multiple lamp designs, focusing on aesthetics and light diffusion. After selecting three strong concepts, I built physical prototypes and documented the process. I then gathered feedback from five students to evaluate form, function, and visual appeal.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Refinement Phase</span>
+                        <h3>Iterating on Feedback</h3>
+                        <p>Based on user feedback, I refined the preferred form into three different sizes. I recorded the process and conducted another round of user testing. After reviewing feedback with my mentor, I adjusted my casting strategy and prepared a new clay formulation.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Production Development</span>
+                        <h3>Mold & Glaze Testing</h3>
+                        <p>I developed a multi-part mold over four days using push pins for precision. Then, I tested and formulated glazes over two days, creating test tiles to evaluate light diffusion and aesthetics. I documented all technical steps and glaze outcomes carefully.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Casting Phase</span>
+                        <h3>Porcelain Slip Casting</h3>
+                        <p>
+                            My first casting attempts included a few failures, which I documented and learned from. I adjusted slip consistency and successfully completed two porcelain casts. These were bisque fired on March 24 and glaze fired on April 2, with temperature curves tracked.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Final Development</span>
+                        <h3>Presentation & Documentation</h3>
+                        <p>
+                            I compiled and edited my process videos and visual assets into a professional presentation. I conducted multiple practice sessions to prepare and ensured the narrative followed a clear, structured format, showcasing each step of my development process.
+                        </p>
+                        <img src="images/planning-phase.jpg" alt="Planning sketches and materials" style="width: 100%; height: auto; margin-top: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Light cycle animation
+        const gradientBg = document.getElementById('gradient-bg');
+        const lightModes = ['dawn-mode', 'day-mode', 'afternoon-mode', 'sunset-mode', 'evening-mode', 'night-mode'];
+        let currentModeIndex = 0;
+        
+        function cycleLightMode() {
+            // Remove all modes
+            lightModes.forEach(mode => gradientBg.classList.remove(mode));
+            
+            // Add current mode
+            gradientBg.classList.add(lightModes[currentModeIndex]);
+            
+            // Update index for next cycle
+            currentModeIndex = (currentModeIndex + 1) % lightModes.length;
+        }
+        
+        // Initial call
+        cycleLightMode();
+        
+        // Set interval for cycling (every 7 seconds)
+        setInterval(cycleLightMode, 7000);
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        
+        // Modal functions
+        function openModal(memberId) {
+            document.getElementById(memberId + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        function closeModal(memberId) {
+            document.getElementById(memberId + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Close modal when clicking outside of content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
