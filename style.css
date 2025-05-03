@@ -193,12 +193,12 @@
             position: relative;
         }
 
-        .about-video video {
+        .about-video iframe {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Keeps the video within the bounds without distortion */
+            border: none;
             background-color: #f7f7f7;
-        }
+        }        
 
         .features {
             background: #f9f9f9;
@@ -534,3 +534,4 @@
           #carousel-member1 .carousel-btn.next {
             right: 10px;
           }
+
