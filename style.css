@@ -179,26 +179,27 @@
             min-width: 300px;
             padding: 0 20px;
         }
-        
-        .about-image {
+
+        .about-video {
             flex: 1;
             min-width: 300px;
-            height: 400px;
+            max-width: 500px; /* Keeps the container's max-width */
+            height: 400px; /* Fixed height */
             background: #f7f7f7;
             border-radius: 10px;
             margin: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
         }
-        
-        .lamp-image {
+
+        .about-video video {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            background-color: #f7f7f7; /* optional: matches container background */
+            object-fit: contain; /* Keeps the video within the bounds without distortion */
+            background-color: #f7f7f7;
         }
-        
+
         .features {
             background: #f9f9f9;
         }
@@ -243,7 +244,7 @@
             gap: 40px;
             margin-top: 30px;
         }
-        
+
         .team-member {
             background: white;
             border-radius: 10px;
@@ -438,4 +439,98 @@
         .night-mode {
             background: linear-gradient(to bottom, #355c7d, #2a3d52);
         }
-    
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
+          }
+          
+          .carousel-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+          }
+          
+          .carousel-track img,
+          .carousel-track video {
+            /*flex-shrink: 0;*/
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            /*object-fit: cover;  Kaya wants cropped zoomed-in view */
+            border-radius: 10px;
+          }
+          
+          /* Buttons shared by all carousels unless overridden */
+          .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+          }
+          
+          .carousel-btn.prev {
+            left: 10px;
+          }
+          .carousel-btn.next {
+            right: 10px;
+          }
+          
+          
+          /* === MARIELA'S CAROUSEL === */
+          #carousel-member1 {
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
+          }
+          
+          #carousel-member1 .carousel-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+          }
+          
+          #carousel-member1 .carousel-track img,
+          #carousel-member1 .carousel-track video {
+            flex-shrink: 0;
+            width: 300px;
+            height: 200px;
+            object-fit: contain; /* Mariela wants full image shown */
+            border-radius: 10px;
+            background-color: #f0f0f0;
+          }
+          
+          #carousel-member1 .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+          }
+          
+          #carousel-member1 .carousel-btn.prev {
+            left: 10px;
+          }
+          #carousel-member1 .carousel-btn.next {
+            right: 10px;
+          }
