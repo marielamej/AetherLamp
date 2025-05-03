@@ -38,9 +38,12 @@
                     <p>Where conventional lighting remains static, Aether responds to the time of day, creating a dynamic atmosphere that elevates mood, boosts focus, and helps you unwind when it matters most.</p>
                     <p>Named after the Greek word for “pure, fresh air” and “clear sky,” Aether is where nature, design, and technology converge. Crafted from slip-cast ceramic porcelain and inspired by the sun’s daily arc, it brings both aesthetic elegance and thoughtful functionality to your space—perfect for those who spend long hours at a desk but crave the calming influence of natural light.</p>
                 </div>
-                <div class="about-image">
-                    <img src="AetherLamp.jpg" alt="Aether Lamp" class="lamp-image">
+                <div class="about-video">
+                    <video class="lamp-video" autoplay loop playsinline>
+                        <source src="AetherLampVideo.mp4" type="video/mp4">
+                    </video>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -65,21 +68,6 @@
                     <h3 class="feature-title">Automatic Scheduling</h3>
                     <p>Aether automatically adjusts to your time zone and changes colors according to the natural sunlight pattern.</p>
                 </div>
-                <!--<div class="feature-item">
-                    <div class="feature-icon">💤</div>
-                    <h3 class="feature-title">Better Sleep</h3>
-                    <p>By mimicking natural light patterns, SunCycle helps regulate your circadian rhythm for improved sleep quality.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <h3 class="feature-title">Customizable Modes</h3>
-                    <p>Adjust brightness levels and transition times to suit your personal preferences and schedule.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔋</div>
-                    <h3 class="feature-title">Energy Efficient</h3>
-                    <p>Uses low-energy LED technology for sustainable lighting that's gentle on your energy bill.</p>
-                </div> -->
             </div>
         </div>
     </section>
@@ -89,7 +77,7 @@
             <h2 class="section-title">Meet the Team</h2>
             <p>The brilliant minds behind Aether. Click on team members to learn about their process.</p>
             <div class="team-grid">
-                <div class="team-member" onclick="openModal('member1')">
+                <div class="team-member" onclick="showModal('member1')">
                     <div class="member-img">
                         <img src="Mariela.jpg" alt="Team Member 1" style="width:100%; height:100%; object-fit:cover;">
                     </div>
@@ -99,7 +87,7 @@
                         <p>Click to see Mariela's process</p>
                     </div>
                 </div>
-                <div class="team-member" onclick="openModal('member2')">
+                <div class="team-member" onclick="showModal('member2')">
                     <div class="member-img">
                         <img src="Kaya.jpg" alt="Team Member 2" style="width:100%; height:100%; object-fit:cover;">
                     </div>
@@ -119,12 +107,6 @@
             <div style="text-align: center; max-width: 600px; margin: 0 auto;">
                 <p>Interested in learning more about Aether? Reach out to us!</p>
                 <p style="margin: 20px 0;">mariela.mejiatg@gmail.com<p> kayathamon@gmail.com</p>
-                <!--<p>Follow our journey on social media!</p>
-                <div class="social-links" style="margin-top: 20px;">
-                    <a href="#">📱</a>
-                    <a href="#">📸</a>
-                    <a href="#">🐦</a>
-                </div> -->
             </div>
         </div>
     </section>
@@ -138,7 +120,7 @@
     </footer>
     
     <!-- Team Member Modals -->
-    <div class="modal" id="member1-modal">
+    <div class="modal" id="member1-modal" style="display: none;">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('member1')">×</span>
             <h2>Mariela Mejia-Guzman's Process</h2>
@@ -147,40 +129,78 @@
             <div class="process-timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">Ideation Phase</span>
-                        <h3>Concept Development</h3>
-                        <p>My journey with SunCycle began with research into how light affects human well-being. I was fascinated by studies showing how artificial lighting disrupts our natural rhythms, and started sketching ideas for a lamp that could mimic the sun's natural progression.</p>
+                        <span class="timeline-date">Initial Testing</span>
+                        <h3>Early Circuit Exploration</h3>
+                        <p>I began with a simple light-sensitive circuit using a photoresistor, resistor, an LED strip, and an Arduino Uno. The goal was to have the LEDs respond to ambient light—brightening in the dark and dimming in the light. While the initial test worked, I noticed inconsistencies in how the brightness reacted. This raised questions about whether the issue was the sensor, the circuit, or my code. It was a valuable starting point for understanding the sensitivity of light inputs and how they translate to visual output.
+                        </p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">Design Phase</span>
-                        <h3>Material Exploration</h3>
-                        <p>Finding the perfect transparent material that would diffuse light beautifully while maintaining structural integrity was challenging. After testing multiple options, I settled on a specialized polycarbonate with optical properties that enhanced the light transitions.</p>
+                        <span class="timeline-date">Lighting Behavior</span>
+                        <h3>Circadian Light</h3>
+                        <p>Inspired by tools like f.lux, I explored how to mimic natural light transitions throughout the day. This led me to research microcontrollers with WiFi capability. I chose the ESP8266 and learned how to connect it to the internet to fetch the current time via an NTP server and pull sunrise/sunset data from an API. This data would eventually control the brightness and color temperature of the LEDs, creating a light flow that adjusts according to real-world sunlight patterns.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">Prototyping</span>
-                        <h3>Form Finding</h3>
-                        <p>The lamp's form went through numerous iterations. I wanted to create something that looked beautiful both when illuminated and when off. The final curved design allows light to refract through the material in fascinating ways throughout the day.</p>
+                        <span class="timeline-date">Technical Challenges</span>
+                        <h3>Troubleshooting & Technical Growth</h3>
+                        <p>Hardware setup wasn’t without complications. I quickly realized my original power source couldn’t provide enough current for the LED strip. I spent time learning about regulated 5V/2A adapters and proper power distribution. Additionally, the ESP8266 wasn’t recognized by my computer at first. This setback taught me about USB data cables vs. power-only cables, driver installation (CH340), and board manager settings in the Arduino IDE. These frustrations ultimately deepened my understanding of hardware reliability.</p>
                     </div>
                 </div>
                 
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Prototype Development</span>
+                        <h3>Base & Physical Prototype Development</h3>
+                        <p>While I was still solving circuit issues, I also turned attention to the lamp's physical structure. I reused a pole and ceramic lampshade from a previous project and designed a custom base in SolidWorks. The base included an internal slot for the microcontroller and a routed exit for the power cable. I shortened the pole and ran wiring cleanly through its interior, keeping the aesthetic minimal. This stage helped me visualize how all components would physically integrate and guided the layout for future iterations.</p>
+                    </div>   
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="timeline-date">Final Development</span>
-                        <h3>Engineering Solutions</h3>
-                        <p>Integrating the lighting technology with the physical form required creative engineering solutions. I worked closely with Jordan to develop a system that allowed for smooth transitions between light states while maintaining the lamp's aesthetic integrity.</p>
+                        <h3>Final Troubleshooting</h3>
+                        <p>To simplify the setup and ensure stability, I stripped a USB power cable and connected it directly to the circuit. I then added an inline switch that allows the lamp to be easily powered on or off. This eliminated the need to plug and unplug wires during testing and made the prototype more practical for everyday use. I also tested how to power both the microcontroller and LED strip from a single source, ensuring the circuit wouldn't overload. </p>
                     </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Final Design</span>
+                        <h3>Redesign & Physical Assembly</h3>
+                        <p>
+                        For the final prototype, I transitioned away from the early mock-up and designed a completely new circular base from scratch. The new base was 3D modeled and fabricated to securely house the electronics, with a built-in notch for clean cable management. I also created a new, sturdier pole to better support the lamp shade and give the piece a more balanced, finished appearance. This version not only improved the structural integrity of the lamp but also elevated its aesthetic to better reflect the intended calming, functional design for everyday use.</p>               
+                    </div>
+                </div>
+                <h3 style="margin-top: 40px;">Process Highlights</h3>
+                <div class="carousel-container" id="carousel-member1">
+                    <button class="carousel-btn prev">&#10094;</button>
+                    <div class="carousel-track">
+                        <img src="m1.jpg" alt="Image">
+                        <img src="m2.jpg" alt="Image">
+                        <img src="m3.jpg" alt="Image">
+                        <img src="m4.jpg" alt="Image">
+                        <img src="m5.jpg" alt="Image">
+                        <img src="m6.jpg" alt="Image">
+                        <img src="m7.jpg" alt="Image">
+                        <img src="m8.jpg" alt="Image">
+                        <img src="m9.jpg" alt="Image">
+                        <img src="m10.jpg" alt="Image">
+                        <img src="m11.jpg" alt="Image">
+                        <video controls muted preload="metadata" width="250">
+                            <source src="m12.mp4" type="video/mp4">
+                          </video>
+                        <img src="m13.jpg" alt="Image">
+                    </div>
+                    <button class="carousel-btn next">&#10095;</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="modal" id="member2-modal">
+    <!-- Team member 2-->
+    <div class="modal" id="member2-modal" style="display: none;">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('member2')">×</span>
             <h2>Kaya Hamon's Process</h2>
@@ -234,73 +254,85 @@
                         <p>
                             I compiled and edited my process videos and visual assets into a professional presentation. I conducted multiple practice sessions to prepare and ensured the narrative followed a clear, structured format, showcasing each step of my development process.
                         </p>
-                        <img src="images/planning-phase.jpg" alt="Planning sketches and materials" style="width: 100%; height: auto; margin-top: 10px;">
                     </div>
                 </div>
+                <h3 style="margin-top: 40px;">Process Highlights</h3>
+                <div class="carousel-container" id="carousel-member2">
+                  <button class="carousel-btn prev">&#10094;</button>
+                  <div class="carousel-track">
+                    <img src="k1.jpg" alt="Planning Phase">
+                    <img src="k2.jpg" alt="Prototype Forms">
+                    <img src="k3.jpg" alt="User Testing">
+                    <img src="k4.jpg" alt="Mold Making">
+                    <img src="k5.jpg" alt="Glaze Testing">
+                    <img src="k6.jpg" alt="Final Casting">
+                    <img src="k8.jpg" alt="Final Casting">
+                    <img src="k9.jpg" alt="Final Casting">
+                    <img src="k10.jpg" alt="Final Casting">
+                    <img src="k11.jpg" alt="Final Casting">
+                    <img src="k12.jpg" alt="Final Casting">
+                  </div>
+                  <button class="carousel-btn next">&#10095;</button>
+                </div>
+
             </div>
         </div>
     </div>
-    
     <script>
         // Light cycle animation
         const gradientBg = document.getElementById('gradient-bg');
         const lightModes = ['dawn-mode', 'day-mode', 'afternoon-mode', 'sunset-mode', 'evening-mode', 'night-mode'];
         let currentModeIndex = 0;
-        
         function cycleLightMode() {
-            // Remove all modes
             lightModes.forEach(mode => gradientBg.classList.remove(mode));
-            
-            // Add current mode
             gradientBg.classList.add(lightModes[currentModeIndex]);
-            
-            // Update index for next cycle
             currentModeIndex = (currentModeIndex + 1) % lightModes.length;
         }
-        
-        // Initial call
         cycleLightMode();
-        
-        // Set interval for cycling (every 7 seconds)
         setInterval(cycleLightMode, 7000);
-        
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('nav-scrolled');
-            } else {
-                navbar.classList.remove('nav-scrolled');
-            }
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 100);
         });
-        
-        // Modal functions
-        function openModal(memberId) {
-            document.getElementById(memberId + '-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+        // MODAL FUNCTIONS (keep outside of any event listener)
+        function showModal(memberId) {
+            // Hide all other modals
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => modal.style.display = 'none');
+    
+            const modal = document.getElementById(memberId + '-modal');
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
         }
-        
+
         function closeModal(memberId) {
-            document.getElementById(memberId + '-modal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            const modal = document.getElementById(memberId + '-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
-        
-        // Close modal when clicking outside of content
+
+        // Close modal on background click
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         }
-        
-        // Smooth scrolling for navigation
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -310,6 +342,57 @@
                 }
             });
         });
+
+    // ... all your existing code ...
+
+    // === CAROUSEL SCRIPT STARTS HERE ===
+    window.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.getElementById('carousel-member2');
+        const track = carousel.querySelector('.carousel-track');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+
+        let scrollAmount = 0;
+        const scrollStep = 320;
+
+        nextBtn.addEventListener('click', () => {
+            scrollAmount += scrollStep;
+            track.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            scrollAmount -= scrollStep;
+            if (scrollAmount < 0) scrollAmount = 0;
+            track.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Carousel scrolling logic for all carousels
+    document.querySelectorAll('.carousel-container').forEach(container => {
+        const track = container.querySelector('.carousel-track');
+        const prevBtn = container.querySelector('.carousel-btn.prev');
+        const nextBtn = container.querySelector('.carousel-btn.next');
+
+        const scrollAmount = 320; // Adjust based on image width + gap
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    });
+
+
     </script>
+
+    
 </body>
 </html>
